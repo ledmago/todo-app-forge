@@ -1,0 +1,36 @@
+modules:
+  jira:issueAction:
+    - key: export-logs
+      function: exportData
+      title: Export data
+  jira:issuePanel:
+    - key: todo-panel
+      resource: main
+      resolver:
+        function: resolver
+      title: Todos
+      viewportSize: medium
+      tooltip: Add a todo list
+      icon: https://developer.atlassian.com/platform/forge/images/issue-panel-icon.svg
+  function:
+    - key: resolver
+      handler: index.handler
+    - key: exportData
+      handler: index.exportData
+resources:
+  - key: main
+    path: static/spa/build
+permissions:
+  external:
+      images:
+        - '*.giphy.com'
+        - '*.gravatar.com'
+        - '*.wp.com'
+  scopes:
+    - read:jira-work
+    - storage:app
+  content:
+    styles:
+      - unsafe-inline
+app:
+  id: ari:cloud:ecosystem::app/2de165f7-860f-4dda-a269-947bebc4439f

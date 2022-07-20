@@ -1,0 +1,20 @@
+{
+  "name": "custom-ui-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "deploy": "cd static/spa && npm run build && cd ../../ && forge deploy",
+    "tunnel": "cd static/spa && npm run build && cd ../../ && forge tunnel"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-react-hooks": "^4.2.0"
+  },
+  "dependencies": {
+    "@forge/api": "^2.7.0",
+    "@forge/resolver": "^1.4.4",
+    "@forge/ui": "^1.3.0"
+  }
+}
